@@ -15,12 +15,6 @@ Audio::Audio(std::string uniqueID, std::string name, int runningTime, std::strin
 }
 
 
-Audio::~Audio() {
-	/*if ( != nullptr) {
-
-	}*/
-}
-
 bool Audio::ReadData(std::istream& in) {
 	Media::ReadData(in);
 	in.ignore();

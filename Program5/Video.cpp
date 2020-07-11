@@ -18,8 +18,6 @@ Video::Video(std::string uniqueID, std::string name, int runningTime,
 }
 
 
-Video::~Video() {}
-
 bool Video::ReadData(std::istream& in) {
 	Media::ReadData(in);
 	in.ignore();

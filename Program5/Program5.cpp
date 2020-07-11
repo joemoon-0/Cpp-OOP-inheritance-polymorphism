@@ -21,12 +21,10 @@ int main() {
 	std::string file3 = "video.txt";			// Output file - Video
 
 	Media* mediaFiles[200] = { nullptr };
-	
-	/*Media* mediaFiles;		WHATS THE DIFFERENCE?
-	mediaFiles = new Media[200];*/
-	int readIndex = 0;			// Index for readomg data into array
-	int writeIndex = 0;			// Index for writing data to output files
-	char fileType = ' ';
+	int readIndex = 0;							// Index for readomg data into array
+	int writeIndex = 0;							// Index for writing data to output files
+	char fileType = ' ';						// Distinguishes between audio and video files
+	int i = 0;									// Loop variable for deallocating memory
 	
 	// STEP 1: Open and check Input file
 	in.open(file1);
@@ -45,7 +43,7 @@ int main() {
 		else {
 			while (in >> fileType) {
 				in.ignore();
-				// STEP 3: Instantiate Media pointer to corresponding file type
+				// STEP 3: Instantiate Media pointer to corresponding file type and read data
 				switch (fileType) {
 				case 'A':
 					mediaFiles[readIndex] = new Audio;
@@ -60,8 +58,7 @@ int main() {
 		}
 
 		// STEP 4: Write Media data to corresponding output file
-		while (mediaFiles[writeIndex] != nullptr
-			&& writeIndex <= readIndex) {
+		while (mediaFiles[writeIndex] != nullptr && writeIndex <= readIndex) {
 			if (mediaFiles[writeIndex]->getType() == "Audio") {
 				mediaFiles[writeIndex]->WriteData(outAudio);
 			}
@@ -75,9 +72,12 @@ int main() {
 	outAudio.close();
 	outVideo.close();
 
-	// if not null then delete
-	//delete[] mediaFiles;
-	//mediaFiles = nullptr;
-
+	// Deallocate pointer array
+	while (mediaFiles[i] != nullptr) {
+		delete mediaFiles[i];
+		mediaFiles[i] = nullptr;
+		i++;
+	}
+	
 	return 0;
 }

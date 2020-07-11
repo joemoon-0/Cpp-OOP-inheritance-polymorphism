@@ -14,9 +14,6 @@ Media::Media(std::string uniqueID, std::string name, int runningTime) {
 }
 
 
-Media::~Media() {}
-
-
 void Media::setUniqueID(std::string uniqueID) {
 	this->uniqueID = uniqueID;
 }
