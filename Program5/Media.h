@@ -5,7 +5,7 @@
 #include <fstream>
 
 class Media {
-protected:
+private:
 	std::string uniqueID;
 	std::string name;
 	int runningTime;

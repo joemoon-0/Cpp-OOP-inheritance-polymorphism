@@ -45,9 +45,18 @@ int Media::getRunningTime() const {
 
 
 bool Media::ReadData(std::istream& in) {
-	getline(in, uniqueID);
-	getline(in, name);
-	in >> runningTime;
+	std::string readID;
+	std::string readName;
+	int readRunningTime;
+	
+	getline(in, readID);
+	getline(in, readName);
+	in >> readRunningTime;
+
+	setUniqueID(readID);
+	setName(readName);
+	setRunningTime(readRunningTime);
+
 	return true;
 }
 

@@ -4,7 +4,7 @@
 #include "Media.h"
 
 class Video : public Media {
-protected:
+private:
 	std::string resolution;
 	std::string formatDescriptor;
 	std::string qualitySpec;
