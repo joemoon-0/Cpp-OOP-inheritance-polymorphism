@@ -1,4 +1,4 @@
-# UMKC--Cplusplus-Project2
+# UMKC--C++-Project2
 CS201R
 
 A C++ project from a 200-level programming course.<br/>
