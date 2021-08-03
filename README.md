@@ -1,7 +1,7 @@
-# UMKC--C++-Project2
+C++ Inheritance and Polymorphism I/O
 CS201R
 
-A C++ project from a 200-level programming course.<br/>
+A C++ project from a 200-level programming course at the University of Missouri - Kansas City Computer Science Department.<br/>
 Program objectives include:<br/>
 --> Apply a class hierarchy through inheritance and polymorphism.<br/>
 --> Employing virtual functions<br/>
